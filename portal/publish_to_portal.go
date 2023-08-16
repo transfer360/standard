@@ -5,6 +5,7 @@ import (
 	"context"
 	log "github.com/sirupsen/logrus"
 	"strconv"
+	"time"
 )
 
 // SendEvent ------------------------------------------------------------------------------------------
@@ -25,6 +26,7 @@ func SendEvent(ctx context.Context, data []byte, event string, attr map[string]s
 
 	attr["event"] = event
 	attr["client"] = ClientID
+	attr["date_published"] = time.Now().Format(time.RFC3339)
 
 	msg := &pubsub.Message{
 		Data:       data,
