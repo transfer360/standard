@@ -1,5 +1,7 @@
 package notice
 
+import "time"
+
 // https://transfer360.dev/#/status/gethirerinformation
 
 type NoticeTOL struct {
@@ -9,6 +11,7 @@ type NoticeTOL struct {
 	AddressLine1 string `json:"addressline1,omitempty"`
 	AddressLine2 string `json:"addressline2,omitempty"`
 	AddressLine3 string `json:"addressline3,omitempty"`
+	AddressLine4 string `json:"addressline4,omitempty"`
 	PostCode     string `json:"post_code,omitempty"`
 	Country      string `json:"country,omitempty"`
 	Primary      bool   `json:"primary"`
@@ -22,4 +25,12 @@ type NoticeUpdateFromLease struct {
 	AgreementURL      string    `json:"agreement_url,omitempty"`
 	ContractStartDate string    `json:"hire_from,omitempty"`
 	ContractEndDate   string    `json:"hire_to,omitempty"`
+}
+
+type ParkingChargeNoticeSearchResult struct {
+	FleetID      int                   `json:"fleet_id"`
+	LeaseReturn  NoticeUpdateFromLease `json:"lease_return"`
+	DateOfUpdate time.Time             `json:"date_of_update"`
+	Sref         string                `json:"sref"`
+	ClientID     string                `json:"client_id"`
 }
