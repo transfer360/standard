@@ -8,6 +8,7 @@ import (
 	"errors"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
+	log "github.com/sirupsen/logrus"
 	secretmanagerpb "google.golang.org/genproto/googleapis/cloud/secretmanager/v1"
 	"os"
 	"time"
@@ -33,6 +34,7 @@ func CredentialsFromSecretManagerPath(ctx context.Context, secret string) (dbc D
 
 	client, err := secretmanager.NewClient(ctx)
 	if err != nil {
+		log.Errorf("CredentialsFromSecretManagerPath:%v", err)
 		return dbc, fmt.Errorf("failed to create secretmanager client: %w", err)
 	}
 
@@ -42,12 +44,14 @@ func CredentialsFromSecretManagerPath(ctx context.Context, secret string) (dbc D
 
 	result, err := client.AccessSecretVersion(ctx, accessRequest)
 	if err != nil {
+		log.Errorf("CredentialsFromSecretManagerPath:%v", err)
 		return dbc, fmt.Errorf("failed to get secret version: %w", err)
 	}
 
 	err = json.Unmarshal(result.Payload.Data, &dbc)
 
 	if err != nil {
+		log.Errorf("CredentialsFromSecretManagerPath:%v", err)
 		return dbc, err
 	}
 

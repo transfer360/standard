@@ -19,5 +19,9 @@ func GetDatabaseCredentials(ctx context.Context, clientID string, db *sql.DB) (d
 		return dbc, fmt.Errorf("%w for %s", ErrClientSecretCredentialsNotFound, clientID)
 	}
 
+	if len(clientSecretPath) == 0 {
+		return dbc, fmt.Errorf("%w for %s", ErrClientSecretCredentialsNotFound, clientID)
+	}
+
 	return database.CredentialsFromSecretManagerPath(ctx, clientSecretPath)
 }

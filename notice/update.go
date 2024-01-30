@@ -1,6 +1,9 @@
 package notice
 
-import "time"
+import (
+	"github.com/transfer360/sys360/validate"
+	"time"
+)
 
 // https://transfer360.dev/#/status/gethirerinformation
 
@@ -15,6 +18,37 @@ type NoticeTOL struct {
 	PostCode     string `json:"post_code,omitempty" firestore:"PostCode"`
 	Country      string `json:"country,omitempty" firestore:"Country"`
 	Primary      bool   `json:"primary" firestore:"Primary"`
+}
+
+func (n *NoticeTOL) ValidateAddress() error {
+
+	address := make([]string, 0)
+	if len(n.AddressLine1) > 0 {
+		address = append(address, n.AddressLine1)
+	}
+	if len(n.AddressLine2) > 0 {
+		address = append(address, n.AddressLine2)
+	}
+	if len(n.AddressLine3) > 0 {
+		address = append(address, n.AddressLine3)
+	}
+	if len(n.AddressLine4) > 0 {
+		address = append(address, n.AddressLine4)
+	}
+
+	vaddr, err := validate.AddressValidation(address, n.PostCode)
+	if err != nil {
+		return err
+	}
+
+	n.AddressLine1 = vaddr.AddressLine1
+	n.AddressLine2 = vaddr.AddressLine2
+	n.AddressLine3 = vaddr.AddressLine3
+	n.AddressLine4 = vaddr.City
+	n.PostCode = vaddr.Postcode
+
+	return nil
+
 }
 
 type NoticeUpdateFromLease struct {
