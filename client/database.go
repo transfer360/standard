@@ -10,7 +10,7 @@ import (
 
 var ErrClientSecretCredentialsNotFound = errors.New("secret credentials not found")
 
-func GetDatabaseCredentials(ctx context.Context, clientID string, db *sql.DB) (dbc database.DatabaseConfiguration, err error) {
+func GetDatabaseCredentials(ctx context.Context, clientID string, db *sql.DB) (dbc database.Configuration, err error) {
 
 	var clientSecretPath string
 
