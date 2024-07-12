@@ -20,7 +20,7 @@ type NoticeTOL struct {
 	Primary      bool   `json:"primary" firestore:"Primary"`
 }
 
-func (n *NoticeTOL) ValidateAddress() error {
+func (n *NoticeTOL) ValidateAddress(sref string) error {
 
 	address := make([]string, 0)
 	if len(n.AddressLine1) > 0 {
@@ -36,7 +36,7 @@ func (n *NoticeTOL) ValidateAddress() error {
 		address = append(address, n.AddressLine4)
 	}
 
-	vaddr, err := validate.AddressValidation(address, n.PostCode)
+	vaddr, err := validate.AddressValidation(sref, address, n.PostCode)
 	if err != nil {
 		return err
 	}
