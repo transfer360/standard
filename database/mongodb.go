@@ -1,15 +1,16 @@
 package database
 
 import (
-	secretmanager "cloud.google.com/go/secretmanager/apiv1"
-	"cloud.google.com/go/secretmanager/apiv1/secretmanagerpb"
 	"context"
 	"encoding/json"
 	"fmt"
+	"os"
+
+	secretmanager "cloud.google.com/go/secretmanager/apiv1"
+	"cloud.google.com/go/secretmanager/apiv1/secretmanagerpb"
 	log "github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"os"
 )
 
 type creds struct {
