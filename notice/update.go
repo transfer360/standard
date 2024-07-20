@@ -36,6 +36,7 @@ func (n *NoticeTOL) ValidateAddress(sref string) error {
 		address = append(address, n.AddressLine4)
 	}
 
+
 	vaddr, err := validate.AddressValidation(sref, address, n.PostCode)
 	if err != nil {
 		return err

@@ -9,7 +9,7 @@ require (
 	firebase.google.com/go v3.13.0+incompatible
 	github.com/go-sql-driver/mysql v1.7.1
 	github.com/sirupsen/logrus v1.9.3
-	github.com/transfer360/sys360 v1.0.6
+	github.com/transfer360/sys360 v1.0.10-0.20240716163647-425f5bbfcf83
 	go.mongodb.org/mongo-driver v1.16.0
 	golang.org/x/crypto v0.22.0
 	google.golang.org/genproto v0.0.0-20240125205218-1f4bbc51befe
