@@ -1,7 +1,6 @@
 package notice
 
 import (
-	"github.com/transfer360/sys360/validate"
 	"time"
 )
 
@@ -22,31 +21,31 @@ type NoticeTOL struct {
 
 func (n *NoticeTOL) ValidateAddress(sref string) error {
 
-	address := make([]string, 0)
-	if len(n.AddressLine1) > 0 {
-		address = append(address, n.AddressLine1)
-	}
-	if len(n.AddressLine2) > 0 {
-		address = append(address, n.AddressLine2)
-	}
-	if len(n.AddressLine3) > 0 {
-		address = append(address, n.AddressLine3)
-	}
-	if len(n.AddressLine4) > 0 {
-		address = append(address, n.AddressLine4)
-	}
-
-
-	vaddr, err := validate.AddressValidation(sref, address, n.PostCode)
-	if err != nil {
-		return err
-	}
-
-	n.AddressLine1 = vaddr.AddressLine1
-	n.AddressLine2 = vaddr.AddressLine2
-	n.AddressLine3 = vaddr.AddressLine3
-	n.AddressLine4 = vaddr.City
-	n.PostCode = vaddr.Postcode
+	//address := make([]string, 0)
+	//if len(n.AddressLine1) > 0 {
+	//	address = append(address, n.AddressLine1)
+	//}
+	//if len(n.AddressLine2) > 0 {
+	//	address = append(address, n.AddressLine2)
+	//}
+	//if len(n.AddressLine3) > 0 {
+	//	address = append(address, n.AddressLine3)
+	//}
+	//if len(n.AddressLine4) > 0 {
+	//	address = append(address, n.AddressLine4)
+	//}
+	//
+	//
+	//vaddr, err := validate.AddressValidation(sref, address, n.PostCode)
+	//if err != nil {
+	//	return err
+	//}
+	//
+	//n.AddressLine1 = vaddr.AddressLine1
+	//n.AddressLine2 = vaddr.AddressLine2
+	//n.AddressLine3 = vaddr.AddressLine3
+	//n.AddressLine4 = vaddr.City
+	//n.PostCode = vaddr.Postcode
 
 	return nil
 
