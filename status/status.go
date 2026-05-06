@@ -15,6 +15,8 @@ const WAITING_ON_INFO = 9
 const TIME_ELAPSED = 10
 const NO_ANSWER_UNABLE_TO_GET_INFO = 11
 const INFORMATION_REQUIRED = 12
+const MANUAL_ADDRESS_VALIDATION = 14
+const ADDRESS_VALIDATION_CORRECTED = 15
 
 const API_PENDING_STATUS = 0
 const API_NOMINATED_STATUS = 1
@@ -77,6 +79,9 @@ func ApiStatusFromLeaseResultStatus(status int) ApiStatus {
 
 	case INFORMATION_REQUIRED:
 		return ApiStatus{API_EVIDENCE_STATUS, "Evidence Required"}
+
+	case MANUAL_ADDRESS_VALIDATION, ADDRESS_VALIDATION_CORRECTED:
+		return ApiStatus{API_PENDING_TOL, "Pending TOL"}
 
 	default:
 		return ApiStatus{API_ERROR_UNKNOWN_STATUS, fmt.Sprintf("Unknown Status (%d)", status)}
