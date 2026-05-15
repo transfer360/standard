@@ -5,7 +5,7 @@ go 1.25.0
 require (
 	cloud.google.com/go/firestore v1.22.0
 	cloud.google.com/go/pubsub v1.50.2
-	cloud.google.com/go/secretmanager v1.19.0
+	cloud.google.com/go/secretmanager v1.20.0
 	firebase.google.com/go v3.13.0+incompatible
 	github.com/go-sql-driver/mysql v1.9.3
 	github.com/sirupsen/logrus v1.9.4
