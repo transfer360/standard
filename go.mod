@@ -7,7 +7,7 @@ require (
 	cloud.google.com/go/pubsub v1.50.2
 	cloud.google.com/go/secretmanager v1.19.0
 	firebase.google.com/go v3.13.0+incompatible
-	github.com/go-sql-driver/mysql v1.9.3
+	github.com/go-sql-driver/mysql v1.10.0
 	github.com/sirupsen/logrus v1.9.4
 	go.mongodb.org/mongo-driver v1.17.6
 	golang.org/x/crypto v0.49.0
@@ -25,7 +25,7 @@ require (
 	cloud.google.com/go/monitoring v1.27.0 // indirect
 	cloud.google.com/go/pubsub/v2 v2.5.1 // indirect
 	cloud.google.com/go/storage v1.62.0 // indirect
-	filippo.io/edwards25519 v1.1.0 // indirect
+	filippo.io/edwards25519 v1.2.0 // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/detectors/gcp v1.31.0 // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/metric v0.55.0 // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/resourcemapping v0.55.0 // indirect
