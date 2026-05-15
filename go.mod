@@ -9,7 +9,7 @@ require (
 	firebase.google.com/go v3.13.0+incompatible
 	github.com/go-sql-driver/mysql v1.9.3
 	github.com/sirupsen/logrus v1.9.4
-	go.mongodb.org/mongo-driver v1.17.6
+	go.mongodb.org/mongo-driver v1.17.9
 	golang.org/x/crypto v0.49.0
 	google.golang.org/genproto v0.0.0-20260420184626-e10c466a9529
 )
