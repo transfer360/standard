@@ -3,7 +3,7 @@ module github.com/transfer360/standard
 go 1.26.0
 
 require (
-	cloud.google.com/go/firestore v1.22.0
+	cloud.google.com/go/firestore v1.26.0
 	cloud.google.com/go/pubsub v1.51.1
 	cloud.google.com/go/secretmanager v1.22.0
 	firebase.google.com/go v3.13.0+incompatible
