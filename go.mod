@@ -7,7 +7,7 @@ require (
 	cloud.google.com/go/pubsub v1.51.1
 	cloud.google.com/go/secretmanager v1.22.0
 	firebase.google.com/go v3.13.0+incompatible
-	github.com/go-sql-driver/mysql v1.10.1
+	github.com/go-sql-driver/mysql v1.10.2
 	github.com/sirupsen/logrus v1.10.2
 	go.mongodb.org/mongo-driver v1.17.10
 	golang.org/x/crypto v0.58.0
